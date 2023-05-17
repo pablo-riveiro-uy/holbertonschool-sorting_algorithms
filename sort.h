@@ -4,8 +4,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <cstddef>
+#include <stddef.h>
 
+#include <stdint.h>
 /**
  * struct listint_s - Doubly linked list node
  *
