@@ -12,7 +12,7 @@ void quick_sort(int *array, size_t size)
 }
 
 /**
- * quick_sort_recursion - make a recursion to execute quick sort algorithm
+ *quick_sort_recursion - make a recursion to execute quick sort algorithm
  * @array: an array of ints
  * @low: the start of the new partition
  * @high: the end of the new partition
@@ -44,10 +44,11 @@ void swap(int *a, int *b)
 }
 
 /**
- * quick_sort - quicksort algorithm
+ * partition - divide and conquer sorting function
  * @low: start of new partition
- * @size: end of new partition
-
+ * @high: end of new partition
+ * @size: size of full array
+ *
  * Return: index of pivot for recursion
  */
 
