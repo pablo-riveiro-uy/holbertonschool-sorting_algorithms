@@ -11,11 +11,26 @@ void quick_sort(int *array, size_t size)
 	quick_sort_recursion(array, 0, size - 1, size);
 }
 
+int is_sorted(int *array, size_t size)
+{
+      size_t i = 0;
+      
+      for (i = 0; i < size - 1; i++) 
+      {
+            if (array[i] > array[i + 1]) 
+            {
+                  return (1);
+            }
+      }
+      return (0);
+}
+
 /**
  *quick_sort_recursion - make a recursion to execute quick sort algorithm
  * @array: an array of ints
  * @low: the start of the new partition
  * @high: the end of the new partition
+ * @size: size of full array
  */
 
 void quick_sort_recursion(int array[], int low, int high, int size)
@@ -45,6 +60,7 @@ void swap(int *a, int *b)
 
 /**
  * partition - divide and conquer sorting function
+ * @array: an array to divide and sort
  * @low: start of new partition
  * @high: end of new partition
  * @size: size of full array
@@ -60,14 +76,17 @@ int partition(int array[], int low, int high, int size)
 
 	for (j = low; j <= high - 1; j++)
 	{
-		if (pivot_value >= array[j])
+		if  (array[j] < pivot_value)
 		{
 			i++;
+			if (i != j)
+			{
 			swap(&array[j], &array[i]);
 			print_array(array, size);
+			}
 		}
 	}
-	swap(&array[i + 1], &array[high]);
+   	swap(&array[i + 1], &array[high]);
 
 	return (i + 1);
 }
