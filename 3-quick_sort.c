@@ -8,10 +8,10 @@
 
 void quick_sort(int *array, size_t size)
 {
-	int is_same = is_same_num(array);
-
-	if (is_same == 1 || !array || size < 2)
+	if (is_same == 1 || array == NULL || size < 2)
 		return;
+	
+	int is_same = is_same_num(array);
 	quick_sort_recursion(array, 0, size - 1, size);
 }
 
