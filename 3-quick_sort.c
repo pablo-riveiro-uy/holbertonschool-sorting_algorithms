@@ -10,13 +10,13 @@ void quick_sort(int *array, size_t size)
 {
 
 	if (array == NULL)
-			return;
+		return;
 
 	if (1 == is_same_num(array))
 		return;
 
 	if (size < 2)
-		print_array(array, size);
+		return;
 	
 	quick_sort_recursion(array, 0, size - 1, size);
 }
