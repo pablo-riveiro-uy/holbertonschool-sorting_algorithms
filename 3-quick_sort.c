@@ -10,11 +10,9 @@ void quick_sort(int *array, size_t size)
 {
 
 	if (array == NULL)
-		return;
+			return;
 
-	int is_same = is_same_num(array);
-
-	if (is_same == 1)
+	if (1 == is_same_num(array))
 		return;
 
 	if (size < 2)
