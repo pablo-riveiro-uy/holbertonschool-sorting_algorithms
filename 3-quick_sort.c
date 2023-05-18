@@ -10,7 +10,7 @@ void quick_sort(int *array, size_t size)
 {
 	int is_same = is_same_num(array);
 
-	if (is_same == 1)
+	if (is_same == 1 || !array || size < 2)
 		return;
 	quick_sort_recursion(array, 0, size - 1, size);
 }
