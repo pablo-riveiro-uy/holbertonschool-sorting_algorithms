@@ -98,9 +98,9 @@ int partition(int array[], int low, int high, int size)
 		if  (array[j] < pivot_value)
 		{
 			i++;
+			swap(&array[i], &array[j]);
 			if (i != j)
 			{
-			swap(&array[i], &array[j]);
 			print_array(array, size);
 			}
 		}
