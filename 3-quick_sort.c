@@ -8,9 +8,28 @@
 
 void quick_sort(int *array, size_t size)
 {
+	int is_same = is_same_num(array);
+	if (is_same == 1)
+		return;
 	quick_sort_recursion(array, 0, size - 1, size);
 }
 
+
+int is_same_num(int *array)
+{
+	int i = 0;
+	int is_same = 1;
+	while(array[i])
+	{
+		if (array[i] == array[i+1])
+			is_same = 1;
+		else
+			is_same = 0;
+		return(is_same);
+	}
+			return(0);
+	return(1);
+}
 
 /**
  *quick_sort_recursion - make a recursion to execute quick sort algorithm
