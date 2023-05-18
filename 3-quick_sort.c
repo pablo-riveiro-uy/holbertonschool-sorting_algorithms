@@ -5,24 +5,47 @@
  * @size: size of array
  */
 
- void quick_sort(int *array, size_t size)
+void quick_sort(int *array, size_t size)
 {
-	int pivot = array[size/2];
-	int i, j;
-	int temp;
-
-    if (size > 1) {
-        for (i = 0, j = size - 1; ; i++, j--) {
-            while (array[i] < pivot) i++;
-            while (array[j] > pivot) j--;
-            if (i >= j) break;
-            temp = array[i];
-            array[i] = array[j];
-            array[j] = temp;
-			print_array(array,size);
-        }
-        quick_sort(array, i);
-        quick_sort(array + i, size - i);
-    }
+	quick_sort_recursion(array, 0, size - 1, size);
 }
+
+void quick_sort_recursion(int array[], int low, int high, int size)
+{
+
+	if (low < high)
+	{
+	int pivot_index = partition(array, low, high);
+
+	quick_sort_recursion(array, low, pivot_index - 1, size);
+	print_array(array, size);
+	quick_sort_recursion(array, pivot_index + 1, high, size);
+	}
+}
+
+
+void swap(int *a, int *b)
+{
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
+
+int partition(int array[], int low, int high)
+{
+	int pivot_value = array[high];
+	int i = low;
+
+	for (int j = low; j < high; j++)
+	{
+		if (array[j] <= pivot_value)
+		{
+			swap(&array[i], &array[j]);
+			i++;
+		}
+	}
+	swap(&array[i], &array[high]);
+	return (i);
+}
+
  
