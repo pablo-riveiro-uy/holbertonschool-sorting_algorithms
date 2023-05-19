@@ -11,13 +11,8 @@ void quick_sort(int *array, size_t size)
 
 	if (array == NULL)
 		return;
-
 	if (1 == is_same_num(array))
 		return;
-
-	if (size < 2)
-		return;
-	
 	quick_sort_recursion(array, 0, size - 1, size);
 }
 
@@ -54,7 +49,6 @@ int is_same_num(int *array)
 
 void quick_sort_recursion(int array[], int low, int high, int size)
 {
-
 	if (low < high)
 	{
 	int pivot_index = partition(array, low, high, size);
