@@ -8,12 +8,15 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = *list, *tmp, *aux;
+	listint_t *current, *tmp, *aux;
 
-	if (!(*list))
+	if (!list)
 	{
+		fprintf(stderr, "Null List\n");
 		return;
 	}
+
+	current = *list;
 
 	while ((current = current->next))
 	{
